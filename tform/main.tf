@@ -1,4 +1,4 @@
-# teracert/main.tf
+# tform/main.tf
 
 terraform {
   required_providers {
@@ -16,9 +16,7 @@ provider "aws" {
 
 
 
-
 module "vpc" {
-#   source = "../modules/vpc"
-#   vpc_id = module.vpc.vpc_id.id
+  source = "../modules/vpc"
 
 }
