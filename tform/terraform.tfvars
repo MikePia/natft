@@ -1,0 +1,1 @@
+ami_id = data.aws_ami.mtc_ec2.id

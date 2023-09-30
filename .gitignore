@@ -1,2 +1,5 @@
 /ignore
-tform/.terraform
+tform/.terraform/
+# tform/.terraform/modules/
+tform/.terraform/modules/
+tform/.terraform/modules/modules.json
