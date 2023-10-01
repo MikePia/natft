@@ -26,10 +26,14 @@ module "vpc" {
 }
 
 # variable "ami_id" {}
+variable "host_os" {
+  
+}
 module "ec2" {
   source               = "../modules/ec2"
   ami_id               = data.aws_ami.mtc_ec2.id
   mtc_security_id      = module.vpc.mtc_security_id
   mtc_public_subnet_id = module.vpc.mtc_public_subnet_id
   key_pair_id          = aws_key_pair.mtc_auth.id
+  host_os = var.host_os
 }
