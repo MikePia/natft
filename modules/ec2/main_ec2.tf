@@ -20,4 +20,13 @@ resource "aws_instance" "dev_node" {
   tags = {
     Name = "dev-node"
   }
+
+  provisioner "local-exec" {
+    command = templatefile("${path.module}/${var.host_os}-ssh-config.tpl", {
+      hostname = self.public_ip,
+      user = "ubuntu",
+      identityfile = "/.ssh/mtc_key"
+    })
+    interpreter = ["bash", "-c"]
+  }
 }

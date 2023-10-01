@@ -41,3 +41,22 @@ module.vpc.aws_vpc.mtc_vpc: resource "aws_vpc" "mtc_vpc" {
 }
 ```
 
+### I think this is a good model for most projects
+```
+├── modules
+│   ├── ec2
+│   │   ├── linux-ssh-config.tpl
+│   │   ├── main_ec2.tf
+│   │   ├── userdata.tpl
+│   │   └── variables.tf
+│   └── vpc
+│       ├── main_vpc.tf
+│       └── outputs.tf
+└── tform
+    ├── data_sources.tf
+    ├── main.tf
+    ├── Readme.md
+    ├── terraform.tfstate
+    ├── terraform.tfstate.backup
+    └── terraform.tfvars
+``````
